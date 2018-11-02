@@ -25,4 +25,8 @@ Route::group(['middleware' => 'api'], function ($router) {
     Route::post('logout', 'AuthController@logout');
     Route::post('refresh', 'AuthController@refresh');
     Route::post('user', 'AuthController@user');
+
+
+    Route::post('nav','NavController@store');
+    Route::get('nav','API\NavController@index');
 });

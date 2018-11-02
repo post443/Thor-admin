@@ -66,7 +66,18 @@ export const mainRouter = [
           noCache: true,
           roles: ['admin'] // or you can only set roles in sub nav
         }
-      }]
+      },
+      {
+        path: 'nav',
+        component: require('views/nav/index'),
+        name: 'nav',
+        meta: {
+          title: '导航',
+          noCache: true,
+          roles: ['admin'] // or you can only set roles in sub nav
+        }
+      },
+    ]
   },
 ];
 
