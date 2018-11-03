@@ -29,4 +29,10 @@ Route::group(['middleware' => 'api'], function ($router) {
 
     Route::post('nav','NavController@store');
     Route::get('nav','API\NavController@index');
+
+    Route::prefix('games/hhwqzzl')->namespace('API\HHWQZZL')->group(function(){
+        Route::get('people_list','JueSeController@index');
+        Route::post('add_jue_se','JueSeController@create');
+        Route::post('add_word','WordController@create');
+    });
 });

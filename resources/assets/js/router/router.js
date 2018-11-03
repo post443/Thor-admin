@@ -79,6 +79,39 @@ export const mainRouter = [
       },
     ]
   },
+  {
+    path: '/tools',
+    component: layout,
+    redirect: 'example',
+    name: 'tools',
+    showParent: true,
+    meta: {
+      title: '工具',
+      icon: 'md-paper'
+    },
+    children: [
+      {
+        path: 'game/hhw/add_jue_se',
+        component: require('views/game/hhwqzzl/add_jue_se'),
+        name: '航海王强者之路-添加角色',
+        meta: {
+          title: '航海王强者之路-添加角色',
+          noCache: true,
+          roles: ['admin'] // or you can only set roles in sub nav
+        }
+      },
+      {
+        path: 'game/hhw/add_word',
+        component: require('views/game/hhwqzzl/add_word'),
+        name: '航海王强者之路-添加词条',
+        meta: {
+          title: '航海王强者之路-添加词条',
+          noCache: true,
+          roles: ['admin'] // or you can only set roles in sub nav
+        }
+      },
+    ]
+  },
 ];
 
 // 无权限相关的路由

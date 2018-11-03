@@ -17,9 +17,8 @@ class NavController extends Controller
         return view('home');
     }
 
-    public function store(Request $request)
+    public function store(Request $request,Nav $nav)
     {
-        $nav = new Nav;
         $nav->title = $request->title;
         $nav->url = $request->url;
         $nav->note = $request->note;
