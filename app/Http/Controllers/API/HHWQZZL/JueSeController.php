@@ -15,7 +15,11 @@ class JueSeController extends Controller
      */
     public function index(JueSe $jueSe)
     {
-        return $jueSe->all(['id','name']);
+        return [
+            'code' => 200,
+            'msg' => 'OK',
+            'data' => $jueSe->all(['id','name'])
+        ];
     }
 
     /**
