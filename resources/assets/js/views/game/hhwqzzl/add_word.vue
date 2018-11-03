@@ -86,8 +86,8 @@ export default {
         return resp.json();
       })
       .then((resp) =>{
-        if (resp) {
-          this.peopleList = resp;
+        if (resp.code===200) {
+          this.peopleList = resp.data;
         } else {
           this.$Notice.error({
             title: resp.msg
