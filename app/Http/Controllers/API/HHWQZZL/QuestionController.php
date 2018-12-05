@@ -25,7 +25,7 @@ class QuestionController extends Controller
      */
     public function create(Request $request,Question $question)
     {
-        $res = $question::firstOrNew(['title'=>$request->title,'value'=>$question->value]);
+        $res = $question::firstOrNew(['title'=>$request->title,'value'=>$request->value,'first'=>$request->first]);
         try{
             if ($res->exists) throw new \Exception('问题已经存在',401);
             if($res->save()) throw new \Exception('OK',200);

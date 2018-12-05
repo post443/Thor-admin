@@ -8,6 +8,9 @@
         <FormItem label="答案">
           <Input v-model="formItem.value" placeholder="请输入答案" />
         </FormItem>
+        <FormItem label="拼音">
+          <Input v-model="formItem.first" placeholder="请输入题目拼音首字母" />
+        </FormItem>
         <FormItem>
             <Button type="primary" v-on:click="save">保存</Button>
         </FormItem>
@@ -22,8 +25,9 @@ export default {
   data() {
     return {
       formItem: {
-        title: "",
-        value:''
+        title: '',
+        value:'',
+        first:''
       },
     };
   },
@@ -32,8 +36,9 @@ export default {
       fetch("/api/games/hhwqzzl/add_question", {
         method: "post",
         body: JSON.stringify({
-          title: this.formItem.title,
-          value: this.formItem.value
+          title:this.formItem.title,
+          value:this.formItem.value,
+          first:this.formItem.first
         }),
         headers: {
           "content-type": "application/json"
@@ -46,6 +51,7 @@ export default {
           if (resp.code === 200) {
             this.formItem.title = "";
             this.formItem.value = "";
+            this.formItem.first = "";
             this.$Notice.success({
               title: "添加成功"
             });
