@@ -34,5 +34,6 @@ Route::group(['middleware' => 'api'], function ($router) {
         Route::get('people_list','JueSeController@index');
         Route::post('add_jue_se','JueSeController@create');
         Route::post('add_word','WordController@create');
+        Route::post('add_question','QuestionController@create');
     });
 });

@@ -110,6 +110,16 @@ export const mainRouter = [
           roles: ['admin'] // or you can only set roles in sub nav
         }
       },
+      {
+        path: 'game/hhw/add_question',
+        component: require('views/game/hhwqzzl/add_question'),
+        name: '航海王强者之路-添加题库',
+        meta: {
+          title: '航海王强者之路-添加题库',
+          noCache: true,
+          roles: ['admin'] // or you can only set roles in sub nav
+        }
+      },
     ]
   },
 ];
